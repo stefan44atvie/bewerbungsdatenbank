@@ -1,0 +1,83 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+.menu_titels {
+  text-decoration: none;
+  font-size: large;
+  color: white;
+}
+
+.projektname_text {
+  text-decoration: none;
+  font-size: larger;
+  color: white;
+  font-weight: bold;
+}
+
+.page_titel {
+  font-size: x-large;
+  color: blue;
+  font-weight: bold;
+  letter-spacing: 0.2em;
+}
+
+.section_titel {
+  font-size: large;
+  color: black;
+  font-weight: bold;
+  letter-spacing: 0.2em;
+}
+
+.stats_ov_number {
+  text-decoration: none;
+  font-size: xx-large;
+  color: blue;
+  font-weight: bold;
+}
+
+.answers_ov_number {
+  text-decoration: none;
+  font-size: xx-large;
+  color: blue;
+  font-weight: bold;
+}
+
+.stats_ov_text {
+  text-decoration: none;
+  color: black;
+  font-weight: normal;
+  font-style: italic;
+}
+
+.answers_ov_text {
+  text-decoration: none;
+  color: black;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.answers_small_text {
+  text-decoration: none;
+  color: gray;
+  font-weight: normal;
+  font-style: italic;
+  font-size: small;
+}
+
+.appsbystatebox_text {
+  text-decoration: none;
+  color: white;
+  font-weight: 700;
+  font-style: normal;
+  font-size: medium;
+}
+
+.appsbystatebox_number {
+  text-decoration: none;
+  color: black;
+  font-weight: 600;
+  font-style: normal;
+  font-size: medium;
+}/*# sourceMappingURL=bwd_fonts.css.map */

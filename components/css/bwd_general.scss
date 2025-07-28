@@ -1,0 +1,38 @@
+* { padding: 0; margin: 0; }
+
+.bwd_headermenu_area{
+    height:6dvh;
+    width:100%;
+    background-color: purple;
+    padding-left:10px;
+    padding-right:10px;
+    display:flex;
+    flex-grow: 1;
+    
+    display: flex;
+    justify-content: center;     // horizontal zentrieren
+    align-items: center;     // oben ausrichten
+
+    #projektname{
+        flex-grow: 1;
+    }
+    div{
+        flex-grow: 1;
+    }
+}
+
+
+/* ---- Effekte ---- */ 
+.box_shadow{
+    box-shadow: 0 12px 16px 0 rgba(19, 26, 21, 0.24),0 17px 50px 0 rgba(83, 248, 89, 0.19);
+}
+.box_shadow:hover {
+    box-shadow: 0 12px 30px 0 rgba(1, 93, 29, 0.24),0 17px 50px 0 rgba(2, 121, 12, 0.19);
+}
+
+/* ---- Boxen ---- */
+.appstate_box{
+    background-color: blue;
+    padding:10px;
+    border-radius: 20px;
+}
