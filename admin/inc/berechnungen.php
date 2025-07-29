@@ -1,6 +1,6 @@
 <?php 
 
-$sql_countBewerbungen = "select count(id) as Anzahl from bewerbungen";
+    $sql_countBewerbungen = "select count(id) as Anzahl from bewerbungen";
     $resCB = mysqli_query($connect,$sql_countBewerbungen);
     $rowCB = mysqli_fetch_assoc($resCB);
     $anzahl_bewerbungen = $rowCB['Anzahl'];

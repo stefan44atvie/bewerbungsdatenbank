@@ -1,0 +1,24 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+.up_titel {
+  text-decoration: none;
+  color: black;
+  letter-spacing: 0.2em;
+  font-weight: bold;
+  font-size: large;
+}
+
+.up_standardfont {
+  text-decoration: none;
+  color: black;
+  font-size: small;
+}
+
+.up_schrittmarke {
+  text-decoration: none;
+  color: blue;
+  font-size: small;
+}/*# sourceMappingURL=ag25v2_updateprozess_fonts.css.map */

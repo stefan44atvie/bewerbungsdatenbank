@@ -43,7 +43,7 @@
     height:50dvh;
     // background-color: cadetblue;
 
-    padding-top:70px;
+    padding-top:50px;
     padding-left:10px;
     padding-right:10px;
 
@@ -132,5 +132,39 @@
             width:95%;
         }
 
+    }
+}
+#updateov_area{
+    height:10dvh;
+    // background-color: aqua;
+    display:flex;
+    justify-content: center; // Horizontal zentrieren
+    align-items: center;     // Vertikal zentrieren
+}
+
+#updatecheck_ov_titel{
+    padding-top:40px;
+    padding-left:10px;
+}
+#quickactions_area{
+    padding-left:10px;
+    padding-top:40px;
+    padding-bottom:30px;
+
+    #quickactions_listarea{
+        display:flex;
+        justify-content: center; // Horizontal zentrieren
+        align-items: center;     // Vertikal zentrieren
+        gap: 15px;
+
+        div{
+            width:20dvw;
+            height:20dvh;
+            background-color: white;
+
+            display:flex;
+            justify-content: center; // Horizontal zentrieren
+            align-items: center;     // Vertikal zentrieren
+        }
     }
 }
