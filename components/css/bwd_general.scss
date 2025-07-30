@@ -19,9 +19,37 @@
     div{
         flex-grow: 1;
     }
+    a:link{
+        color:white;
+        font-weight: 500;
+        text-decoration: none;
+    }
+    a:visited{
+        color:white;
+        font-weight: 500;
+        text-decoration: none;
+    }
+    a:active {
+        // background-color: #198754; /* Bootstrap success green */
+        color: lightsalmon;
+    }
+    a.active {
+        // background-color: #198754; /* Bootstrap success green */
+        color: lightsalmon ;
+    }
+    a:hover {
+        color:red;
+        border-bottom:2px solid black;
+    }
 }
+.input_label{
+    padding:5px;
+    background-color: green;
+    color:white;
+    font-weight: bold;
+    font-size: medium;
 
-
+}
 /* ---- Effekte ---- */ 
 .box_shadow{
     box-shadow: 0 12px 16px 0 rgba(19, 26, 21, 0.24),0 17px 50px 0 rgba(83, 248, 89, 0.19);
@@ -35,4 +63,12 @@
     background-color: blue;
     padding:10px;
     border-radius: 20px;
+}
+.applic_status{
+    padding:5px;
+    padding-left:10px;
+    padding-right:10px;
+    background-color: crimson;
+    color:white;
+    border-radius: 15px;;
 }

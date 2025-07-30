@@ -82,10 +82,22 @@
 
 #applicationsbystate_area {
   width: 100%;
-  padding-top: 70px;
+  margin-top: 40px;
+  padding-top: 20px;
   padding-left: 10px;
   padding-right: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+#applicationsbystate_area #appstate_box {
+  width: 98%;
+  padding: 10px;
+  padding-top: 20px;
   padding-bottom: 20px;
+  border-radius: 20px;
+  border: 1px solid lightblue;
 }
 #applicationsbystate_area #appsbystate_flexarea {
   display: flex;
@@ -106,16 +118,27 @@
 
 #recentapplications_area {
   width: 100%;
-  padding-top: 70px;
+  margin-top: 40px;
   padding-left: 10px;
   padding-bottom: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-#recentapplications_area #table_area {
+#recentapplications_area #recentapps_box {
+  width: 97%;
+  padding: 10px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  border-radius: 20px;
+  border: 1px solid lightblue;
+}
+#recentapplications_area #recentapps_box #table_area {
   display: flex;
   justify-content: center;
 }
-#recentapplications_area #table_area table {
-  width: 95%;
+#recentapplications_area #recentapps_box #table_area table {
+  width: 100%;
 }
 
 #updateov_area {
@@ -123,6 +146,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  gap: 15px;
 }
 
 #updatecheck_ov_titel {
@@ -134,14 +158,25 @@
   padding-left: 10px;
   padding-top: 40px;
   padding-bottom: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-#quickactions_area #quickactions_listarea {
+#quickactions_area #qhickactions_box {
+  width: 97%;
+  padding: 10px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  border-radius: 20px;
+  border: 1px solid lightblue;
+}
+#quickactions_area #qhickactions_box #quickactions_listarea {
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 15px;
 }
-#quickactions_area #quickactions_listarea div {
+#quickactions_area #qhickactions_box #quickactions_listarea div {
   width: 20dvw;
   height: 20dvh;
   background-color: white;

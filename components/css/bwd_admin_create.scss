@@ -1,0 +1,156 @@
+* { padding: 0; margin: 0; }
+
+#create_area{
+    #createresponse_area{
+        display: flex;
+        flex-direction: column;
+        // justify-content: center;     // horizontal zentrieren
+        align-items: center;     // oben ausrichten
+        
+        #createresponse_box{
+            width:95%;
+            // background-color: aqua;
+            margin-top:10dvh;
+            height:60dvh;
+            // border-radius: 15px;
+            // border:2px solid lightblue;
+            .createresponse_titel{
+                text-align: left !important;
+            }
+            #createresponsebox_content{
+                display: flex;
+                justify-content: center;     // horizontal zentrieren
+                align-items: center;     // oben ausrichten  
+
+                #creationrespfomular_box{
+                    background-color: lightblue;
+                    width:70%;
+                    height:fit-content;
+                    padding-bottom:20px;
+                    padding:10px;
+                    border-radius: 20px;
+                    border:2px solid lightseagreen;
+
+                    display: flex;
+                    // justify-content: center;     // horizontal zentrieren
+                    align-items: center;     // oben ausrichten      
+                    flex-direction: column;
+
+                    #createresponse_inputformular{
+                        display:grid;
+                        grid-template-columns: 1fr 1fr 1fr;
+                        gap: 10px;
+
+                        #field_response_selapp{
+                            grid-column: 1/span 1;
+                        }
+                        #field_response_selresponsetype{
+                            grid-column: 2/span 1;
+                        }
+                        #field_response_content{
+                            grid-column: 1/span 3;
+                            
+                            #textfield_responsecontent{
+                                width:100%;
+                            }
+                        }
+
+                        #field_response_nextsteps{
+                            grid-column: 1/span 3;
+                            
+                            #textfield_responsenextsteps{
+                                width:100%;
+                            }
+                        }
+                        #field_response_followupdate{
+                            grid-column: 3/span 1;
+                        }
+                        .submitbutton{
+                            grid-column: 1/span 3;
+                        }   
+                    }
+                }
+                 }
+            }
+        }
+    }
+    #createapplication_area{
+        display: flex;
+        flex-direction: column;
+        // justify-content: center;     // horizontal zentrieren
+        align-items: center;     // oben ausrichten
+
+        .createtitle_titel{
+            height:20px;
+        }
+        #createapp_box{
+            width:95%;
+            // background-color: aqua;
+            margin-top:10dvh;
+            height:60dvh;
+            // border-radius: 15px;
+            // border:2px solid lightblue;
+
+            .createapp_titel{
+                text-align: left !important;
+            }
+            #createbox_content{
+                display: flex;
+                justify-content: center;     // horizontal zentrieren
+                align-items: center;     // oben ausrichten    
+
+                #creationfomular_box{
+                    background-color: lightblue;
+                    width:70%;
+                    height:fit-content;
+                    padding-bottom:20px;
+                    padding:10px;
+                    border-radius: 20px;
+                    border:2px solid lightseagreen;
+
+                    display: flex;
+                    // justify-content: center;     // horizontal zentrieren
+                    align-items: center;     // oben ausrichten      
+                    flex-direction: column;
+
+                    #createapp_inputformular{
+                        display:grid;
+                        grid-template-columns: 1fr 1fr 1fr;
+                        gap: 10px;
+
+                        #field_appl_expsalary{
+                            grid-column: 2/span 2;
+                        }
+                        #field_appl_joblink{
+                            grid-column: 1/span 3;
+                        }
+                        #field_appl_description{
+                            grid-column: 1/span 3;
+
+                            #textfield_description{
+                                width:100%;
+                            }
+                        }
+                        #field_appl_requirements{
+                            grid-column: 1/span 3;
+                            
+                            #textfield_requirements{
+                                width:100%;
+                            }
+                        }
+                        #field_appl_notizen{
+                            grid-column: 1/span 3;
+
+                            #textfield_notizen{
+                                width:100%;
+                            }
+                        }
+                        .submitbutton{
+                            grid-column: 1/span 3;
+                        }
+                        
+                    }
+                }
+            }
+        }
+    }

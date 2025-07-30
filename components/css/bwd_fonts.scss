@@ -73,6 +73,15 @@
 .bold_text{
     font-weight: bold;
 }
+.bold_listtext{
+    font-weight: bold;
+    color:lightseagreen;
+}
+.insidemenu_link{
+    font-weight: 300;
+    color:lightseagreen;
+    text-decoration: none;
+}
 
 .actionbox_titel{
     font-size: large;
@@ -80,3 +89,15 @@
     color:black;
     font-weight: bold;
 }
+
+#quickactions_area{
+    #qhickactions_box{
+        #quickactions_listarea{
+            a:link{
+                text-decoration: none;
+                color:lightseagreen;
+            }
+        }
+    }
+}
+            

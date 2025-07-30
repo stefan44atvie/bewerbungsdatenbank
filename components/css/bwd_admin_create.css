@@ -1,0 +1,132 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+#create_area #createresponse_area {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+#create_area #createresponse_area #createresponse_box {
+  width: 95%;
+  margin-top: 10dvh;
+  height: 60dvh;
+}
+#create_area #createresponse_area #createresponse_box .createresponse_titel {
+  text-align: left !important;
+}
+#create_area #createresponse_area #createresponse_box #createresponsebox_content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#create_area #createresponse_area #createresponse_box #createresponsebox_content #creationrespfomular_box {
+  background-color: lightblue;
+  width: 70%;
+  height: -moz-fit-content;
+  height: fit-content;
+  padding-bottom: 20px;
+  padding: 10px;
+  border-radius: 20px;
+  border: 2px solid lightseagreen;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+#create_area #createresponse_area #createresponse_box #createresponsebox_content #creationrespfomular_box #createresponse_inputformular {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 10px;
+}
+#create_area #createresponse_area #createresponse_box #createresponsebox_content #creationrespfomular_box #createresponse_inputformular #field_response_selapp {
+  grid-column: 1/span 1;
+}
+#create_area #createresponse_area #createresponse_box #createresponsebox_content #creationrespfomular_box #createresponse_inputformular #field_response_selresponsetype {
+  grid-column: 2/span 1;
+}
+#create_area #createresponse_area #createresponse_box #createresponsebox_content #creationrespfomular_box #createresponse_inputformular #field_response_content {
+  grid-column: 1/span 3;
+}
+#create_area #createresponse_area #createresponse_box #createresponsebox_content #creationrespfomular_box #createresponse_inputformular #field_response_content #textfield_responsecontent {
+  width: 100%;
+}
+#create_area #createresponse_area #createresponse_box #createresponsebox_content #creationrespfomular_box #createresponse_inputformular #field_response_nextsteps {
+  grid-column: 1/span 3;
+}
+#create_area #createresponse_area #createresponse_box #createresponsebox_content #creationrespfomular_box #createresponse_inputformular #field_response_nextsteps #textfield_responsenextsteps {
+  width: 100%;
+}
+#create_area #createresponse_area #createresponse_box #createresponsebox_content #creationrespfomular_box #createresponse_inputformular #field_response_followupdate {
+  grid-column: 3/span 1;
+}
+#create_area #createresponse_area #createresponse_box #createresponsebox_content #creationrespfomular_box #createresponse_inputformular .submitbutton {
+  grid-column: 1/span 3;
+}
+
+#createapplication_area {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+#createapplication_area .createtitle_titel {
+  height: 20px;
+}
+#createapplication_area #createapp_box {
+  width: 95%;
+  margin-top: 10dvh;
+  height: 60dvh;
+}
+#createapplication_area #createapp_box .createapp_titel {
+  text-align: left !important;
+}
+#createapplication_area #createapp_box #createbox_content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#createapplication_area #createapp_box #createbox_content #creationfomular_box {
+  background-color: lightblue;
+  width: 70%;
+  height: -moz-fit-content;
+  height: fit-content;
+  padding-bottom: 20px;
+  padding: 10px;
+  border-radius: 20px;
+  border: 2px solid lightseagreen;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+#createapplication_area #createapp_box #createbox_content #creationfomular_box #createapp_inputformular {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 10px;
+}
+#createapplication_area #createapp_box #createbox_content #creationfomular_box #createapp_inputformular #field_appl_expsalary {
+  grid-column: 2/span 2;
+}
+#createapplication_area #createapp_box #createbox_content #creationfomular_box #createapp_inputformular #field_appl_joblink {
+  grid-column: 1/span 3;
+}
+#createapplication_area #createapp_box #createbox_content #creationfomular_box #createapp_inputformular #field_appl_description {
+  grid-column: 1/span 3;
+}
+#createapplication_area #createapp_box #createbox_content #creationfomular_box #createapp_inputformular #field_appl_description #textfield_description {
+  width: 100%;
+}
+#createapplication_area #createapp_box #createbox_content #creationfomular_box #createapp_inputformular #field_appl_requirements {
+  grid-column: 1/span 3;
+}
+#createapplication_area #createapp_box #createbox_content #creationfomular_box #createapp_inputformular #field_appl_requirements #textfield_requirements {
+  width: 100%;
+}
+#createapplication_area #createapp_box #createbox_content #creationfomular_box #createapp_inputformular #field_appl_notizen {
+  grid-column: 1/span 3;
+}
+#createapplication_area #createapp_box #createbox_content #creationfomular_box #createapp_inputformular #field_appl_notizen #textfield_notizen {
+  width: 100%;
+}
+#createapplication_area #createapp_box #createbox_content #creationfomular_box #createapp_inputformular .submitbutton {
+  grid-column: 1/span 3;
+}/*# sourceMappingURL=bwd_admin_create.css.map */

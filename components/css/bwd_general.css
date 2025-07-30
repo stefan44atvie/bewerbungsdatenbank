@@ -21,6 +21,34 @@
 .bwd_headermenu_area div {
   flex-grow: 1;
 }
+.bwd_headermenu_area a:link {
+  color: white;
+  font-weight: 500;
+  text-decoration: none;
+}
+.bwd_headermenu_area a:visited {
+  color: white;
+  font-weight: 500;
+  text-decoration: none;
+}
+.bwd_headermenu_area a:active {
+  color: lightsalmon;
+}
+.bwd_headermenu_area a.active {
+  color: lightsalmon;
+}
+.bwd_headermenu_area a:hover {
+  color: red;
+  border-bottom: 2px solid black;
+}
+
+.input_label {
+  padding: 5px;
+  background-color: green;
+  color: white;
+  font-weight: bold;
+  font-size: medium;
+}
 
 /* ---- Effekte ---- */
 .box_shadow {
@@ -36,4 +64,13 @@
   background-color: blue;
   padding: 10px;
   border-radius: 20px;
+}
+
+.applic_status {
+  padding: 5px;
+  padding-left: 10px;
+  padding-right: 10px;
+  background-color: crimson;
+  color: white;
+  border-radius: 15px;
 }/*# sourceMappingURL=bwd_general.css.map */

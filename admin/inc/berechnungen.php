@@ -30,7 +30,10 @@
     $rowCNtA = mysqli_fetch_assoc($resCNtA);
     $anzahl_neutraleAntworten = $rowCNtA['Anzahl'];
 
-
-
+    if ($anzahl_antworten > 0) {
+        $erfolgsquote = ($anzahl_positiveAntworten / $anzahl_antworten) * 100;
+    } else {
+        $erfolgsquote = 0;
+    }
 
 ?>

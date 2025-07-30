@@ -1,0 +1,51 @@
+* { padding: 0; margin: 0; }
+
+#bewerbungen_titlearea{
+    display:flex;
+    gap:20px;
+    height:10dvh;
+    justify-content: left;
+    // background-color: bisque;
+    padding-left:20px;
+    justify-content: center;     // horizontal zentrieren
+    align-items: center;     // oben ausrichten
+
+    .added_options{
+        display:flex;
+        gap:30px;
+        flex-grow:1;
+        margin-left:50px;
+        padding-right:30px;
+        // background-color: aqua;
+        justify-content:flex-start;
+    }
+}
+
+#bewerbungen_contentarea{
+    width:100%;
+    // background-color:aquamarine;
+
+    display:flex;
+    justify-content: center;     // horizontal zentrieren
+    align-items: center;     // oben ausrichten
+
+    #area_list_bewerbungen{
+        // background-color: aliceblue;
+        width:98%;
+        min-height:30dvh;
+        padding:15px;
+        border-radius: 20px;
+        border:1px solid lightseagreen;
+
+        #field_appl_selstatus{
+            width:100%;
+        }
+        #bewerbungen_liste{
+            margin-top:20px;
+            // background-color: burlywood;
+            width:100%;
+
+            border-radius: 20px;
+        }
+    }
+}

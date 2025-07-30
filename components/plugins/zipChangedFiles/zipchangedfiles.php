@@ -1,6 +1,6 @@
 <?php
 /**
- * changed_zip_creator.php – Funktion, die ein ZIP mit nur geänderten Dateien erstellt.
+ * changed_zip_creator.php – Funktion, die ein ZIP mit nur geänderten Dateien erstellt (ohne .git).
  */
 
 function createChangedFilesZip(string $sourceDir, string $zipTarget, string $mode = 'hash'): bool {
@@ -10,6 +10,7 @@ function createChangedFilesZip(string $sourceDir, string $zipTarget, string $mod
     }
     putenv('TMPDIR=' . $tmpDir);
     echo sys_get_temp_dir();
+
     $hashStore = __DIR__ . '/.hash_snapshot.json';
     $referenceTime = strtotime('2024-12-01 00:00:00'); // Nur für mtime-Modus
 
@@ -18,7 +19,21 @@ function createChangedFilesZip(string $sourceDir, string $zipTarget, string $mod
         return false;
     }
 
-    $rii = new RecursiveIteratorIterator(new RecursiveDirectoryIterator($sourceDir));
+    $rii = new RecursiveIteratorIterator(
+        new RecursiveCallbackFilterIterator(
+            new RecursiveDirectoryIterator($sourceDir, RecursiveDirectoryIterator::SKIP_DOTS),
+            function ($file, $key, $iterator) {
+                // Verzeichnisse oder Dateien, die ignoriert werden sollen:
+                $basename = $file->getBasename();
+                if ($basename === '.git' || $basename === '.DS_Store' || $basename === 'node_modules') {
+                    return false;
+                }
+                return true;
+            }
+        ),
+        RecursiveIteratorIterator::LEAVES_ONLY
+    );
+
     $changedFiles = [];
     $newHashes = [];
     $baseLength = strlen($sourceDir) + 1;
@@ -62,10 +77,9 @@ function createChangedFilesZip(string $sourceDir, string $zipTarget, string $mod
     }
     $zip->close();
 
-    setFlashMessage(type: 'success', message: '✅ ZIP mit " . count($changedFiles) . " geänderten Dateien erstellt: $zipTarget<br>');
+    setFlashMessage(type: 'success', message: '✅ ZIP mit ' . count($changedFiles) . ' geänderten Dateien erstellt: ' . $zipTarget . '<br>');
     echo "✅ ZIP mit " . count($changedFiles) . " geänderten Dateien erstellt: $zipTarget<br>";
 
-    // --- Zeitstempel im JSON speichern
     if ($mode === 'hash') {
         $newHashes['_last_run'] = date('Y-m-d H:i:s');
         file_put_contents($hashStore, json_encode($newHashes, JSON_PRETTY_PRINT));

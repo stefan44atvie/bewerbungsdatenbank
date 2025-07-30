@@ -88,10 +88,27 @@
 }
 #applicationsbystate_area{
     width:100%;
-    padding-top:70px;
+    // padding-top:70px;
+    margin-top:40px;
+    padding-top:20px;
     padding-left:10px;
     padding-right:10px;
-    padding-bottom:20px;
+    // padding-bottom:20px;
+
+    display:flex;
+    flex-direction: column; // Zeilen statt Reihe!
+    justify-content: center; // Horizontal zentrieren
+    align-items: center;     // Vertikal zentrieren
+
+    #appstate_box{
+        width:98%;
+        padding:10px;
+        padding-top:20px;
+        padding-bottom:20px;
+        border-radius: 20px;
+        border:1px solid lightblue;
+
+    }
 
     #appsbystate_flexarea{
         display:flex;
@@ -114,24 +131,35 @@
 }
 #recentapplications_area{
     width:100%;
-    padding-top:70px;
+    margin-top:40px;
+
+    // padding-top:70px;
     padding-left:10px;
     // padding-right:10px;
     padding-bottom:30px;
 
-    // display:flex;
-    // flex-direction: row; // Zeilen statt Reihe!
-    // justify-content: center; // Horizontal zentrieren
+    display:flex;
+    justify-content: center; // Horizontal zentrieren
+    align-items: center;     // Vertikal zentrieren
 
-    #table_area{
-        // width:95%;
-        display:flex;
-        justify-content: center; // Horizontal zentrieren
+    #recentapps_box{
+        width:97%;
+        padding:10px;
+        padding-top:20px;
+        padding-bottom:20px;
+        border-radius: 20px;
+        border:1px solid lightblue;
 
-        table{
-            width:95%;
-        }
+        #table_area{
+            // width:95%;
+            display:flex;
+            justify-content: center; // Horizontal zentrieren
 
+            table{
+                width:100%;
+            }
+
+    }
     }
 }
 #updateov_area{
@@ -140,6 +168,7 @@
     display:flex;
     justify-content: center; // Horizontal zentrieren
     align-items: center;     // Vertikal zentrieren
+    gap:15px;
 }
 
 #updatecheck_ov_titel{
@@ -151,20 +180,32 @@
     padding-top:40px;
     padding-bottom:30px;
 
-    #quickactions_listarea{
-        display:flex;
-        justify-content: center; // Horizontal zentrieren
-        align-items: center;     // Vertikal zentrieren
-        gap: 15px;
+    display:flex;
+    justify-content: center; // Horizontal zentrieren
+    align-items: center;     // Vertikal zentrieren
 
-        div{
-            width:20dvw;
-            height:20dvh;
-            background-color: white;
-
+    #qhickactions_box{
+         width:97%;
+        padding:10px;
+        padding-top:20px;
+        padding-bottom:20px;
+        border-radius: 20px;
+        border:1px solid lightblue;
+        #quickactions_listarea{
             display:flex;
             justify-content: center; // Horizontal zentrieren
             align-items: center;     // Vertikal zentrieren
+            gap: 15px;
+
+            div{
+                width:20dvw;
+                height:20dvh;
+                background-color: white;
+
+                display:flex;
+                justify-content: center; // Horizontal zentrieren
+                align-items: center;     // Vertikal zentrieren
+            }
         }
     }
 }
