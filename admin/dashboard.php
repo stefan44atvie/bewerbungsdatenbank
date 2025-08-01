@@ -56,7 +56,7 @@
         // $antworten = htmlspecialchars($rowRAT['bewerbungsdatum'], ENT_QUOTES, 'UTF-8');
         $application_status = htmlspecialchars($rowRAT['status'], ENT_QUOTES, 'UTF-8');
       
-        $date_applied = formatCreateDateJD($date_applied);
+        $date_applied = formatCreateDate($date_applied);
 
         $sql_countAntworten = "select count(id) as anzahl from firmen_antworten where fk_bewerbungs_id = $application_id";
         $resCAW = mysqli_query($connect,$sql_countAntworten);
@@ -73,7 +73,7 @@
                 <td>$antworten</td>
                 <td>
                     <div class='btn-group w-100' role='group' aria-label='Basic mixed styles example'>
-                        <a type='button' class='btn btn-sm btn-primary button_shadow text-white' href='details.php?id=$application_id'>Details</a>
+                        <a type='button' class='btn btn-sm btn-primary button_shadow text-white' href='details.php?id=$application_id&details=application'>Details</a>
                         <a type='button' class='btn btn-sm btn-warning button_shadow text-white' href='create.php?action=addresponse&company=$company'>Antworten</a>
                         <a type='button' class='btn btn-sm btn-success button_shadow text-white' href='update.php?id=$application_id&action=updateapplication'>Bearbeiten</a>
                         <a type='button' class='btn btn-sm btn-danger button_shadow text-white' href='inc/delete.php?id=$application_id&deleteapplication' onclick='return confirm(\"Möchten Sie diesen Auftrag wirklich löschen?\")'>Löschen</a>
@@ -300,6 +300,7 @@ $styleUpdate = ($umgebung === 'localhost') ? 'style="display:none;"' : '';
 <script src="../components/scripts/colorize_appstatus.js"></script>
 <script src="components/scripts/tagging_color.js"></script>
 <script src="components/scripts/category_color.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
 </body>
 </html>

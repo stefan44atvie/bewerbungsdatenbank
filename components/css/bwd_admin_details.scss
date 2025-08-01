@@ -1,2 +1,40 @@
 * { padding: 0; margin: 0; }
 
+#detailsarea_application{
+  
+    #details_titlearea{
+        margin-top:30px;
+        text-align: center;
+    }
+    .content_area{
+        display:flex;
+        gap:20px;
+        // height:10dvh;
+        justify-content: left;
+        flex-direction: column;
+        margin-top:50px;
+        // background-color: bisque;
+        padding-left:20px;
+        justify-content: center;     // horizontal zentrieren
+        align-items: center;     // oben ausrichten
+
+        #box_details{
+            width:70%;
+            // min-height:20dvh;
+            border:2px solid lightseagreen;
+            border-radius: 20px;
+            
+            padding:10px;
+            margin-bottom:30px;
+
+            display:grid;
+            grid-template-columns: 1fr 1fr;
+
+            .text_description_box{
+                grid-column: 1/span 2;
+            }
+
+        }
+    }
+   
+}

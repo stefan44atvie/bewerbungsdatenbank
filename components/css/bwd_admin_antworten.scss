@@ -1,0 +1,52 @@
+* { padding: 0; margin: 0; }
+
+#antworten_titlearea{
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+    gap:20px;
+    height:10dvh;
+    justify-content: left;
+    // background-color: bisque;
+    padding-left:20px;
+    justify-content: center;     // horizontal zentrieren
+    align-items: center;     // oben ausrichten
+
+    .added_options{
+        display:flex;
+        gap:30px;
+        flex-grow:1;
+        margin-left:50px;
+        padding-right:30px;
+        // background-color: aqua;
+        justify-content:flex-start;
+
+        div{
+            text-align: end !important;
+        }
+    }
+}
+#antworten_contentarea{
+    width:100%;
+    // background-color:aquamarine;
+
+    display:flex;
+    justify-content: center;     // horizontal zentrieren
+    align-items: center;     // oben ausrichten
+
+    #area_list_antworten{
+        // background-color: aliceblue;
+        width:98%;
+        min-height:30dvh;
+        padding:15px;
+        border-radius: 20px;
+        border:1px solid lightseagreen;
+
+        #antworten_liste{
+            margin-top:20px;
+            // background-color: burlywood;
+            width:100%;
+
+            border-radius: 20px;
+        }
+    }
+}

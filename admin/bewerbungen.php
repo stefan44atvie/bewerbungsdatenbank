@@ -106,7 +106,7 @@ $styleUpdate = ($umgebung === 'localhost') ? 'style="display:none;"' : '';
                 <td>$antworten</td>
                 <td>
                     <div class='btn-group w-100' role='group' aria-label='Basic mixed styles example'>
-                        <a type='button' class='btn btn-sm btn-primary button_shadow text-white' href='details.php?id=$application_id'>Details</a>
+                        <a type='button' class='btn btn-sm btn-primary button_shadow text-white' href='details.php?id=$application_id&details=application'>Details</a>
                         <a type='button' class='btn btn-sm btn-warning button_shadow text-white' href='create.php?action=addresponse&company=$company'>Antworten</a>
                         <a type='button' class='btn btn-sm btn-success button_shadow text-white' href='update.php?id=$application_id&action=updateapplication'>Bearbeiten</a>
                         <a type='button' class='btn btn-sm btn-danger button_shadow text-white' href='inc/delete.php?id=$application_id&deleteapplication' onclick='return confirm(\"Möchten Sie diesen Auftrag wirklich löschen?\")'>Löschen</a>
@@ -134,7 +134,6 @@ $styleUpdate = ($umgebung === 'localhost') ? 'style="display:none;"' : '';
 
     <link rel="stylesheet" href="../components/css/bwd_general.css">
     <link rel="stylesheet" href="../components/css/bwd_fonts.css">
-    <link rel="stylesheet" href="../components/css/bwd_admin_dashboard.css">
     <link rel="stylesheet" href="../components/css/bwd_admin_bewerbungen.css">
     
     <title>Bewerbungen - Meine Bewerbungsdatenbank</title>
@@ -147,10 +146,13 @@ $styleUpdate = ($umgebung === 'localhost') ? 'style="display:none;"' : '';
         </div>
         <div class="added_options">
             <div>
-                <a class="insidemenu_link" href="create.php?action=addapplication">neue Bewerbung...</a>
+                <a class="btn insidemenu_link" href="create.php?action=addapplication">neue Bewerbung...</a>
             </div>
             <div>
-                <a class="insidemenu_link">Export PDF...</a>
+                <button class="btn insidemenu_link" disabled>Export PDF...</button>
+            </div>
+            <div>
+                <button class="btn insidemenu_link" data-table-id="TabelleBewerbungen" data-filename="allebewerbungen.csv">Export CSV...</button>
             </div>
         </div>
     </div>
@@ -176,7 +178,7 @@ $styleUpdate = ($umgebung === 'localhost') ? 'style="display:none;"' : '';
                     });
                 </script>
                 <div id="bewerbungen_liste">
-                    <table class ="table table-striped">
+                    <table class ="table table-striped" id="TabelleBewerbungen">
                         <tr>
                             <th>Firma</th>
                             <th>Position</th>
@@ -199,6 +201,7 @@ $styleUpdate = ($umgebung === 'localhost') ? 'style="display:none;"' : '';
 <script src="../components/scripts/colorize_appstatus.js"></script>
 <script src="components/scripts/tagging_color.js"></script>
 <script src="components/scripts/category_color.js"></script>
+<script src="../components/scripts/downloadtableasCSV.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
 </body>
 </html>

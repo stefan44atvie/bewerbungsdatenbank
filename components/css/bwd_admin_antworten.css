@@ -1,0 +1,45 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+#antworten_titlearea {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  height: 10dvh;
+  justify-content: left;
+  padding-left: 20px;
+  justify-content: center;
+  align-items: center;
+}
+#antworten_titlearea .added_options {
+  display: flex;
+  gap: 30px;
+  flex-grow: 1;
+  margin-left: 50px;
+  padding-right: 30px;
+  justify-content: flex-start;
+}
+#antworten_titlearea .added_options div {
+  text-align: end !important;
+}
+
+#antworten_contentarea {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#antworten_contentarea #area_list_antworten {
+  width: 98%;
+  min-height: 30dvh;
+  padding: 15px;
+  border-radius: 20px;
+  border: 1px solid lightseagreen;
+}
+#antworten_contentarea #area_list_antworten #antworten_liste {
+  margin-top: 20px;
+  width: 100%;
+  border-radius: 20px;
+}/*# sourceMappingURL=bwd_admin_antworten.css.map */

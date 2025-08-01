@@ -1,1 +1,1 @@
-{"version":3,"sources":["bwd_admin_details.scss","bwd_admin_details.css"],"names":[],"mappings":"AAAA;EAAI,UAAA;EAAY,SAAA;ACGhB","file":"bwd_admin_details.css"}
+{"version":3,"sources":["bwd_admin_details.scss","bwd_admin_details.css"],"names":[],"mappings":"AAAA;EAAI,UAAA;EAAY,SAAA;ACGhB;;ADCI;EACI,gBAAA;EACA,kBAAA;ACER;ADAI;EACI,aAAA;EACA,SAAA;EAEA,qBAAA;EACA,sBAAA;EACA,gBAAA;EAEA,kBAAA;EACA,uBAAA;EACA,mBAAA;ACAR;ADEQ;EACI,UAAA;EAEA,+BAAA;EACA,mBAAA;EAEA,aAAA;EACA,mBAAA;EAEA,aAAA;EACA,8BAAA;ACHZ;ADKY;EACI,qBAAA;ACHhB","file":"bwd_admin_details.css"}

@@ -30,10 +30,31 @@
     $rowCNtA = mysqli_fetch_assoc($resCNtA);
     $anzahl_neutraleAntworten = $rowCNtA['Anzahl'];
 
-    if ($anzahl_antworten > 0) {
+    $antworten_gesamt = $anzahl_negativeAntworten + $anzahl_positiveAntworten;
+    if ($antworten_gesamt > 0) {
         $erfolgsquote = ($anzahl_positiveAntworten / $anzahl_antworten) * 100;
+        $erfolgsquote = round($erfolgsquote, 2); // auf 2 Nachkommastellen runden
     } else {
         $erfolgsquote = 0;
     }
+
+    /* ---- Berechnung der aktuellen woche ---- */ 
+    /* ======================================== */
+    $heute = new DateTime(); // aktuelles Datum
+
+    // Wochentag (1 = Montag, 7 = Sonntag)
+    $wochentag = $heute->format('N');
+
+    // Montag dieser Woche berechnen
+    $montag = clone $heute;
+    $montag->modify('-' . ($wochentag - 1) . ' days');
+
+    // Sonntag dieser Woche berechnen
+    $sonntag = clone $heute;
+    $sonntag->modify('+' . (7 - $wochentag) . ' days');
+
+    // Ausgabe
+    // echo "Aktuelle Woche: " . $montag->format('d.m.Y') . " – " . $sonntag->format('d.m.Y');
+    /* ---- Berechnung der aktuellen woche ---- */ 
 
 ?>

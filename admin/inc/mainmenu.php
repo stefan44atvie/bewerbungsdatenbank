@@ -9,16 +9,16 @@
         <a class="<?php echo ($current_page == 'bewerbungen.php') ? 'active' : ''; ?>" href="bewerbungen.php">Bewerbungen</a>
     </div>
     <div>
-        <a class="<?php echo ($current_page == 'analysen.php') ? 'active' : ''; ?>" href="analysen.php">Analysen</a>
+        <a class="disabled <?php echo ($current_page == 'analysen.php') ? 'active' : ''; ?>" href="analysen.php">Analysen</a>
     </div>
     <div>
         <a class="<?php echo ($current_page == 'antworten.php') ? 'active' : ''; ?>" href="antworten.php">Antworten</a>
     </div>
     <div>
-        <a class="<?php echo ($current_page == 'erinnerungen.php') ? 'active' : ''; ?>" href="erinnerungen.php">Erinnerungen</a>
+        <a class="disabled <?php echo ($current_page == 'erinnerungen.php') ? 'active' : ''; ?>" href="erinnerungen.php">Erinnerungen</a>
     </div>
     <div>
-        <a class="<?php echo ($current_page == 'statistiken.php') ? 'active' : ''; ?>" href="statistiken.php">Statistiken</a>
+        <a class="disabled <?php echo ($current_page == 'statistiken.php') ? 'active' : ''; ?>" href="statistiken.php">Statistiken</a>
     </div>
     <div>
         <a class="<?php echo ($current_page == 'logout.php?logout') ? 'active' : ''; ?>" href="inc/logout.php?logout">Logout</a>

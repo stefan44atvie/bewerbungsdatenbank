@@ -106,7 +106,7 @@
         $stmt->bind_param("s", $company);
     } else {
         // Wenn keine Firma übergeben wurde, lade alle
-        $stmt = $connect->prepare("SELECT * FROM `bewerbungen` ORDER BY created_at DESC");
+        $stmt = $connect->prepare(query: "SELECT * FROM `bewerbungen` where status not like 'Abgelehnt' ORDER BY created_at DESC");
     }
 
     $stmt->execute();
@@ -270,7 +270,7 @@
         <div id="createresponse_area" <?= $styleCRANW ?>>
             <div id="createresponse_box">
                 <div class="createresponse_titel">
-                    <h2 class="section_titel">neue Bewerbung anlegen</h2>
+                    <h2 class="section_titel">neue Antwort anlegen</h2>
                 </div>
                 <div id="createresponsebox_content" >
                     <div id="creationrespfomular_box" class="box_shadow">

@@ -1,4 +1,31 @@
 * {
   padding: 0;
   margin: 0;
+}
+
+#detailsarea_application #details_titlearea {
+  margin-top: 30px;
+  text-align: center;
+}
+#detailsarea_application .content_area {
+  display: flex;
+  gap: 20px;
+  justify-content: left;
+  flex-direction: column;
+  margin-top: 50px;
+  padding-left: 20px;
+  justify-content: center;
+  align-items: center;
+}
+#detailsarea_application .content_area #box_details {
+  width: 70%;
+  border: 2px solid lightseagreen;
+  border-radius: 20px;
+  padding: 10px;
+  margin-bottom: 30px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+#detailsarea_application .content_area #box_details .text_description_box {
+  grid-column: 1/span 2;
 }/*# sourceMappingURL=bwd_admin_details.css.map */

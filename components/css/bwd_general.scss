@@ -72,3 +72,18 @@
     color:white;
     border-radius: 15px;;
 }
+.response_status{
+    padding:5px;
+    padding-left:10px;
+    padding-right:10px;
+    background-color: crimson;
+    color:white;
+    border-radius: 15px;;
+}
+
+a.disabled {
+  color: #888;
+  pointer-events: none;
+  text-decoration: none;
+  opacity: 0.6;
+}
