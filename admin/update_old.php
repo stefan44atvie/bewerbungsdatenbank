@@ -1,15 +1,23 @@
 <?php 
+// echo '<pre>';
+// print_r($_POST);
+// echo '</pre>';
     ini_set('display_errors', 1);
     ini_set('display_startup_errors', 1);
     error_reporting(E_ALL);
 
     require "../components/database/db_connect.php";
-    mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
+    // mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
     // require_once ('components/inc/check_remote_licence.php');
 
     include "../components/loadplugins.php";
     include "inc/berechnungen.php";
    
+    $new_bewerbungsdatum = null;  // oder ''
+    function toMysqlDatetime($date, $time) {
+        $dt = DateTime::createFromFormat('d.m.Y H:i', "$date $time");
+        return $dt ? $dt->format('Y-m-d H:i:s') : null;
+    }
 
     $config = require __DIR__ . '/../components/config/timezone.php';
 
@@ -19,8 +27,17 @@
 
     $current_page = getCurrentPage();
 
-    $action = $_GET['action'];
-    $app_id = $_GET['id'];
+   $action = $_GET['action'] ?? '';
+$app_id = $_GET['id'] ?? '';
+
+if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['btn_updateapplication'])) {
+    // Verarbeitung der Formularwerte
+    echo '<pre>';
+    print_r($_POST);
+    echo '</pre>';
+    // Hier kannst du z. B. auch updateApplication($connect, $_POST, $app_id); aufrufen
+}
+
 
     // echo $action; 
     // var_dump($app_id);
@@ -48,6 +65,9 @@
         $old_jobbeschreibung = $rowUAD['jobbeschreibung'];
         $old_voraussetzungen = $rowUAD['voraussetzungen'];
         $old_notizen = $rowUAD['notizen'];
+
+            var_dump($_POST['updateapp_date']);
+var_dump($_POST['updateapp_time']);
 
         if($oldsalary==""){
             $oldsalary = "nicht angegeben";
@@ -79,8 +99,15 @@
             $new_appdate = isset($_POST['updateapp_date']) && $_POST['updateapp_date'] !== '' ? $_POST['updateapp_date'] : $old_appdate;
             $new_apptime = isset($_POST['updateapp_time']) && $_POST['updateapp_time'] !== '' ? $_POST['updateapp_time'] : $old_apptime;
 
-            $new_bewerbungsdatum = $new_appdate.' '.$new_apptime;
+            $new_bewerbungsdatum = "";
+            if (!empty($new_appdate) && !empty($new_apptime)) {
+                $new_bewerbungsdatum = toMysqlDatetime($new_appdate, $new_apptime);            
+            } else {
+                $new_bewerbungsdatum = toMysqlDatetime($old_appdate, $old_apptime);            
+            }
 
+            var_dump($new_bewerbungsdatum);
+            die();
             $new_appmethod = isset($_POST['updateapp_method']) && $_POST['updateapp_method'] !== '' ? $_POST['updateapp_method'] : $old_appmethod;
             $new_appstatus = isset($_POST['updateapp_status']) && $_POST['updateapp_status'] !== '' ? $_POST['updateapp_status'] : $old_appstatus;
             $new_apppriority = isset($_POST['updateapp_priority']) && $_POST['updateapp_priority'] !== '' ? $_POST['updateapp_priority'] : $old_priority;
@@ -91,36 +118,31 @@
             $new_notizen = isset($_POST['textfield_notizen']) && $_POST['textfield_notizen'] !== '' ? $_POST['textfield_notizen'] : $old_notizen;
 
             $date_update = date("Y-m-d H:i:s");
+            $new_bewerbungsdatum = $new_appdate.' '.$new_apptime;
 
-            $date_newupdate = formatCreateDate($date_update);
             // if($new_appstatus != $old_appstatus){
-            //     $test = "ja ist unterschiedlich";
-            //     $newAppStatus_text = "Der Status der Bewerbung wurde von ".$old_appstatus.' auf '.$new_appstatus. ' aktualisiert';
-            //     $stmtNewAppStatus = $connect->prepare("UPDATE `bewerbungen` SET notizen = ? WHERE id = ?");
-            //     if (!$stmtNewAppStatus) {        
-            //         throw new Exception("Statement konnte nicht vorbereitet werden: " . $connect->error);
+            //    if ($new_appstatus != $old_appstatus) {
+            //         // 1. Statusfeld aktualisieren
+            //         $stmtNewAppStatus = $connect->prepare("UPDATE `bewerbungen` SET status = ? WHERE id = ?");
+            //         if (!$stmtNewAppStatus) {
+            //             throw new Exception("Status-Update konnte nicht vorbereitet werden: " . $connect->error);
+            //         }
+            //         $stmtNewAppStatus->bind_param("si", $new_appstatus, $app_id);
+            //         if (!$stmtNewAppStatus->execute()) {
+            //             die("Fehler beim Status-Update: " . $stmtNewAppStatus->error);
+            //         }
+
+            //         // 2. Notizen erweitern
+            //         $created_at_update = date("d.m.Y H:i");
+            //         $statuswechsel_notiz = $created_at_update . ": Status wurde geändert von '$old_appstatus' auf '$new_appstatus'";
+            //         $new_notizen = $old_notizen . "<br>" . $statuswechsel_notiz;
             //     }
-            //     $stmtNewAppStatus->bind_param("si", $newAppStatus_text, $app_id);
-            //     $stmtNewAppStatus->execute();   // <- Wichtig, sonst wird das Update nicht ausgeführt
-            //     $stmtNewAppStatus->close();
-
-            // }
-
-            /* ---- Statusänderung der Bewerbung ---- */
-            // ist der Status der Bewerbung anders als der alte, wird dies auch in den Notizen erfasst
-
-            if ($new_appstatus != $old_appstatus) {
-                $newAppStatus_text = $date_newupdate . ": Der Status der Bewerbung wurde von $old_appstatus auf $new_appstatus aktualisiert";
-
-                // Wenn bisher kein Text vorhanden ist oder Platzhalter "nicht angegeben"
-                if (trim($new_notizen) === "nicht angegeben" || trim($new_notizen) === "") {
-                    $new_notizen = $newAppStatus_text;
-                } else {
-                    // Bestehenden Text beibehalten, neue Zeile anhängen
-                    $new_notizen .= "\n" . $newAppStatus_text;
-                }
+                    
+            //         $stmtNewAppStatus->close();
+            //     }            
             }
-
+            // var_dump($new_bewerbungsdatum);
+            // die();
             $stmt = $connect->prepare("UPDATE bewerbungen SET 
                 firma = ?,
                 position = ?,
@@ -164,7 +186,7 @@
             exit;
         }
 
-    }
+    
 
     
     
@@ -177,8 +199,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name=“description“ content="Die Digitale Seele ist der Blog für Technik- und Online-Interessierte in Österreich">
-    <title><?php echo $page_title; ?></title>
+<meta name="description" content="Die Digitale Seele ist der Blog für Technik- und Online-Interessierte in Österreich">    <title><?php echo $page_title; ?></title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
 
     <link rel="stylesheet" href="../components/css/bwd_general.css">

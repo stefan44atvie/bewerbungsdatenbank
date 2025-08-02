@@ -84,13 +84,29 @@ $styleUpdate = ($umgebung === 'localhost') ? 'style="display:none;"' : '';
         $kontaktperson = htmlspecialchars($rowAAN['kontaktperson'], ENT_QUOTES, 'UTF-8');
         $followup_required = htmlspecialchars($rowAAN['followup_required'], ENT_QUOTES, 'UTF-8');
       
+        if($followup_required==1){
+            $followup_required = "ja";
+        }else if ($followup_required==0){
+            $followup_required = "nein";
+        }
         $antwort_datum = formatCreateDate($antwort_datum);
 
-        $sql_BewDetails = "select * from bewerbungen where id = $fk_bewerbungs_id";
-        $resBWD = mysqli_query($connect,$sql_BewDetails);
-        $rowBWD = mysqli_fetch_assoc($resBWD);
-        $firma = $rowBWD['firma'];
-        $position = $rowBWD['position'];
+       if (!empty($fk_bewerbungs_id) && is_numeric($fk_bewerbungs_id)) {
+        $sql_BewDetails = "SELECT * FROM bewerbungen WHERE id = $fk_bewerbungs_id";
+        $resBWD = mysqli_query($connect, $sql_BewDetails);
+
+        if ($resBWD && mysqli_num_rows($resBWD) > 0) {
+            $rowBWD = mysqli_fetch_assoc($resBWD);
+            $firma = $rowBWD['firma'];
+            $position = $rowBWD['position'];
+        } else {
+            $firma = "<i>Unbekannt</i>";
+            $position = "";
+        }
+        } else {
+            $firma = "<i>Ungültige ID</i>";
+            $position = "";
+        }
 
 
         $tbodyABW .= "
@@ -107,9 +123,9 @@ $styleUpdate = ($umgebung === 'localhost') ? 'style="display:none;"' : '';
                 <td>$followup_required</td>
                 <td>
                     <div class='btn-group w-100' role='group' aria-label='Basic mixed styles example'>
-                        <a type='button' class='btn btn-sm btn-primary button_shadow text-white' href='details.php?id=$application_id&details=response'>Details</a>
-                        <a type='button' class='btn btn-sm btn-success button_shadow text-white' href='update.php?id=$application_id&action=updateapplication'>Bearbeiten</a>
-                        <a type='button' class='btn btn-sm btn-danger button_shadow text-white' href='inc/delete.php?id=$application_id&deleteapplication' onclick='return confirm(\"Möchten Sie diesen Auftrag wirklich löschen?\")'>Löschen</a>
+                        <a type='button' class='btn btn-sm btn-primary button_shadow text-white' href='details.php?id=$antwort_id&details=response'>Details</a>
+                        <a type='button' class='btn btn-sm btn-success button_shadow text-white' href='update.php?id=$antwort_id&action=updateresponse'>Bearbeiten</a>
+                        <a type='button' class='btn btn-sm btn-danger button_shadow text-white' href='inc/delete.php?id=$antwort_id&deleteresponse' onclick='return confirm(\"Möchten Sie diesen Auftrag wirklich löschen?\")'>Löschen</a>
                     </div>      
                 </td>
             </tr>

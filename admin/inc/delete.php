@@ -32,5 +32,13 @@
     setFlashMessage(type: 'success', message: 'Bewerbung wurde erfolgreich gelöscht...');
     deleteItem($connect, "bewerbungen", $id, "../bewerbungen.php");
 }
-    /* ---- Löschen eines Fotos ---- */
+    /* ---- Löschen einer Bewerbung ---- */
+
+    /* ---- Löschen einer Bewerbung ---- */
+    if (isset($_GET["deleteresponse"])) {
+    $id = intval($_GET["id"]); // ID sicherstellen, dass sie nur eine Zahl ist
+    setFlashMessage(type: 'success', message: 'Antwort wurde erfolgreich gelöscht...');
+    deleteItem($connect, "firmen_antworten", $id, "../antworten.php");
+}
+    /* ---- Löschen einer Bewerbung ---- */
 ?>

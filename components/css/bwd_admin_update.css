@@ -1,4 +1,62 @@
 * {
   padding: 0;
   margin: 0;
+}
+
+#update_area #updatearea_application {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+#update_area #updatearea_application #updateapplication_box {
+  width: 95%;
+  margin-top: 3dvh;
+  height: 60dvh;
+}
+#update_area #updatearea_application #updateapplication_box .updatebox_title {
+  text-align: left;
+}
+#update_area #updatearea_application #updateapplication_box #updateapplication_content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#update_area #updatearea_application #updateapplication_box #updateapplication_content #updateappformular_box {
+  background-color: lightblue;
+  width: 70%;
+  height: -moz-fit-content;
+  height: fit-content;
+  padding-bottom: 20px;
+  padding: 10px;
+  border-radius: 20px;
+  border: 2px solid lightseagreen;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+#update_area #updatearea_application #updateapplication_box #updateapplication_content #updateappformular_box #updateapp_inputformular {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 10px;
+}
+#update_area #updatearea_application #updateapplication_box #updateapplication_content #updateappformular_box #updateapp_inputformular #field_appl_description {
+  grid-column: 1/span 3;
+}
+#update_area #updatearea_application #updateapplication_box #updateapplication_content #updateappformular_box #updateapp_inputformular #field_appl_description #textfield_description {
+  width: 100%;
+}
+#update_area #updatearea_application #updateapplication_box #updateapplication_content #updateappformular_box #updateapp_inputformular #field_appl_requirements {
+  grid-column: 1/span 3;
+}
+#update_area #updatearea_application #updateapplication_box #updateapplication_content #updateappformular_box #updateapp_inputformular #field_appl_requirements #textfield_requirements {
+  width: 100%;
+}
+#update_area #updatearea_application #updateapplication_box #updateapplication_content #updateappformular_box #updateapp_inputformular #field_appl_notizen {
+  grid-column: 1/span 3;
+}
+#update_area #updatearea_application #updateapplication_box #updateapplication_content #updateappformular_box #updateapp_inputformular #field_appl_notizen #textfield_notizen {
+  width: 100%;
+}
+#update_area #updatearea_application #updateapplication_box #updateapplication_content #updateappformular_box #updateapp_inputformular .submitbutton {
+  grid-column: 1/span 3;
 }/*# sourceMappingURL=bwd_admin_update.css.map */

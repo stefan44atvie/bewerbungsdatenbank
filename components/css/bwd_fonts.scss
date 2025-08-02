@@ -1,23 +1,16 @@
 * { padding: 0; margin: 0; }
 
-.menu_titels{
-    text-decoration: none;
-    font-size: large;
-    color:white;  
-}
-.projektname_text{
-    text-decoration: none;
-    font-size: larger;
-    color:white;  
-    font-weight: bold;
-}
+
+/* ---- Standardfotns ---- */
 .standardtext{
     text-decoration: none;
     font-size: medium;
     color:black;  
     font-weight: normal;
 }
-
+.bold_text{
+    font-weight: bold;
+}
 .page_titel{
     font-size: x-large;
     color:blue;
@@ -30,6 +23,39 @@
     font-weight: bold;
     letter-spacing: 0.2em;
 }
+.insidemenu_link{
+    font-weight: 300;
+    color:lightseagreen;
+    text-decoration: none;
+}
+.actionbox_titel{
+    font-size: large;
+    text-decoration: none;
+    color:black;
+    font-weight: bold;
+}
+
+
+
+.bold_listtext{
+    font-weight: bold;
+    color:lightseagreen;
+}
+.menu_titels{
+    text-decoration: none;
+    font-size: large;
+    color:white;  
+}
+.projektname_text{
+    text-decoration: none;
+    font-size: larger;
+    color:white;  
+    font-weight: bold;
+}
+.details_title{
+    color:lightseagreen;
+}
+
 .stats_ov_number{
     text-decoration: none;
     font-size:xx-large;
@@ -76,24 +102,11 @@
     font-size: medium;
 }
 
-.bold_text{
-    font-weight: bold;
-}
-.bold_listtext{
-    font-weight: bold;
-    color:lightseagreen;
-}
-.insidemenu_link{
-    font-weight: 300;
-    color:lightseagreen;
-    text-decoration: none;
-}
-
-.actionbox_titel{
-    font-size: large;
+.non_available_text{
     text-decoration: none;
     color:black;
-    font-weight: bold;
+    font-size: medium;
+    font-style: italic;
 }
 
 #quickactions_area{

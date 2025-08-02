@@ -107,7 +107,7 @@ $styleUpdate = ($umgebung === 'localhost') ? 'style="display:none;"' : '';
                 <td>
                     <div class='btn-group w-100' role='group' aria-label='Basic mixed styles example'>
                         <a type='button' class='btn btn-sm btn-primary button_shadow text-white' href='details.php?id=$application_id&details=application'>Details</a>
-                        <a type='button' class='btn btn-sm btn-warning button_shadow text-white' href='create.php?action=addresponse&company=$company'>Antworten</a>
+                        <a type='button' class='btn btn-sm btn-warning button_shadow text-white' href='create.php?id=$application_id&action=addresponse&company=$company'>Antworten</a>
                         <a type='button' class='btn btn-sm btn-success button_shadow text-white' href='update.php?id=$application_id&action=updateapplication'>Bearbeiten</a>
                         <a type='button' class='btn btn-sm btn-danger button_shadow text-white' href='inc/delete.php?id=$application_id&deleteapplication' onclick='return confirm(\"Möchten Sie diesen Auftrag wirklich löschen?\")'>Löschen</a>
                     </div>      

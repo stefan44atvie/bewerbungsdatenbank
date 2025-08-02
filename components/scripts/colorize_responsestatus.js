@@ -1,14 +1,17 @@
-const artStatus = document.getElementsByClassName("response_status");
+(function () {
+  const responseStatus = document.getElementsByClassName("response_status");
 
-const bgColorMap = {
-  "Positiv (Ja/Interessiert": "green",
-  "Negativ (Nein/Abgelehnt)": "red",
-  "Neutral (Bestätigung per Mail)": "grey",
-  "Ausstehend (Warten auf Entscheidung)": "orange",
-};
+  const bgColorMap = {
+    "Positiv (Ja/Interessiert)": "green",
+    "Negativ (Nein/Abgelehnt)": "red",
+    "Neutral (Bestätigung per Mail)": "grey",
+    "Ausstehend (Warten auf Entscheidung)": "orange"
+  };
 
-for (let i = 0; i < artStatus.length; i++) {
-  const text = artStatus[i].textContent.trim();
-  const el = artStatus[i];
-  el.style.backgroundColor = bgColorMap[text] || "gray";
-}
+  for (let i = 0; i < responseStatus.length; i++) {
+    const text = responseStatus[i].textContent.trim();
+    console.log(`Text [${i}]:`, JSON.stringify(text));
+    const el = responseStatus[i];
+    el.style.backgroundColor = bgColorMap[text] || "gray";
+  }
+})();

@@ -1,7 +1,7 @@
 <?php 
-    ini_set('display_errors', 1);
-    ini_set('display_startup_errors', 1);
-    error_reporting(E_ALL);
+    // ini_set('display_errors', 1);
+    // ini_set('display_startup_errors', 1);
+    // error_reporting(E_ALL);
 
     require "../components/database/db_connect.php";
     mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
@@ -19,6 +19,7 @@
     $current_page = getCurrentPage();
 
     $action = $_GET['action'];
+    $id = $_GET['id'];
     $company = $_GET['company'] ?? '';
 
     $styleCRAPP = ($action !== 'addapplication') ? 'style="display:none;"' : '';
@@ -97,24 +98,27 @@
 
 
     /* ---- select Bewerbung/Firma ---- */
-    $sql_selectappfirma = "SELECT * FROM `bewerbungen` where firma = '$company' order by created_at DESC ";
-    $resAF = mysqli_query($connect, $sql_selectappfirma);
     $options_selappfirma = "";
-    if (!empty($company)) {
-        // Wenn Firma übergeben wurde, lade Bewerbungen dieser Firma
+
+    if (!empty($id) && !empty($company)) {
+        // Nur die spezifische Bewerbung mit $id anzeigen
+        $stmt = $connect->prepare("SELECT * FROM `bewerbungen` WHERE id = ?");
+        $stmt->bind_param("i", $id);
+    } elseif (!empty($company)) {
+        // Alle Bewerbungen dieser Firma laden
         $stmt = $connect->prepare("SELECT * FROM `bewerbungen` WHERE firma = ? ORDER BY created_at DESC");
         $stmt->bind_param("s", $company);
     } else {
-        // Wenn keine Firma übergeben wurde, lade alle
-        $stmt = $connect->prepare(query: "SELECT * FROM `bewerbungen` where status not like 'Abgelehnt' ORDER BY created_at DESC");
+        // Alle Bewerbungen, außer abgelehnte
+        $stmt = $connect->prepare("SELECT * FROM `bewerbungen` WHERE status NOT LIKE 'Abgelehnt' ORDER BY created_at DESC");
     }
 
     $stmt->execute();
     $result = $stmt->get_result();
 
-    while ($rowAF = $result->fetch_assoc()) {
-        $selected = ($rowAF['firma'] === $company) ? 'selected' : '';
-        $options_selappfirma .= "<option value='{$rowAF["firma"]}' $selected>{$rowAF["firma"]} – {$rowAF["position"]}</option>";
+    while ($row = $result->fetch_assoc()) {
+        $selected = ($row["id"] == $id) ? "selected" : "";
+        $options_selappfirma .= "<option value='{$row["id"]}' $selected>{$row["firma"]} – {$row["position"]}</option>\n";
     }
 
     $stmt->close();
