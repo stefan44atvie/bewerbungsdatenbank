@@ -1,0 +1,38 @@
+#login_area {
+    display: flex;
+    justify-content: center; // horizontal zentrieren des Fensters
+    align-items: center;     // vertikal zentrieren des Fensters
+    height: 100vh;           // voller Viewport
+}
+
+#login_window {
+      width: 30%;
+        background-color: lightseagreen;
+        border: 1px solid black;
+        padding: 20px;
+        border-radius: 10px;
+        padding-bottom:20px;
+        // Inhalt kann normal fließen, keine vertikale Flex-Zentrierung nötig
+
+    .loginbox_title {
+        width: 100%;
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    #loginform_area {
+        display: flex;
+        flex-direction: column;
+        justify-content: center; // vertikal zentrieren der inneren Divs
+        gap: 15px;               // Abstand zwischen den Feldern
+        width: 100%;
+        height: 100%;            // volle Höhe von login_window
+    }
+
+    .loginwindow_email,
+    .loginwindow_password,
+    .loginwindow_button {
+        display: flex;
+        flex-direction: column;
+    }
+}

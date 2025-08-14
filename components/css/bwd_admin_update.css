@@ -59,4 +59,52 @@
 }
 #update_area #updatearea_application #updateapplication_box #updateapplication_content #updateappformular_box #updateapp_inputformular .submitbutton {
   grid-column: 1/span 3;
+}
+#update_area #updatearea_response {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+#update_area #updatearea_response #updateresponse_box {
+  width: 95%;
+  margin-top: 3dvh;
+  height: 60dvh;
+}
+#update_area #updatearea_response #updateresponse_box .updatebox_title {
+  text-align: left;
+}
+#update_area #updatearea_response #updateresponse_box #updateresponse_content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#update_area #updatearea_response #updateresponse_box #updateresponse_content #updaterespformular_box {
+  background-color: lightblue;
+  width: 70%;
+  height: -moz-fit-content;
+  height: fit-content;
+  padding-bottom: 20px;
+  padding: 10px;
+  border-radius: 20px;
+  border: 2px solid lightseagreen;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+#update_area #updatearea_response #updateresponse_box #updateresponse_content #updaterespformular_box #updateresp_inputformular {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 10px;
+}
+#update_area #updatearea_response #updateresponse_box #updateresponse_content #updaterespformular_box #updateresp_inputformular #field_response_content {
+  grid-column: 1/span 3;
+}
+#update_area #updatearea_response #updateresponse_box #updateresponse_content #updaterespformular_box #updateresp_inputformular #field_response_content #textfield_responsecontent {
+  width: 100%;
+}
+#update_area #updatearea_response #updateresponse_box #updateresponse_content #updaterespformular_box #updateresp_inputformular #field_response_nextsteps {
+  grid-column: 1/span 3;
+}
+#update_area #updatearea_response #updateresponse_box #updateresponse_content #updaterespformular_box #updateresp_inputformular #field_response_nextsteps #textfield_responsenextsteps {
+  width: 100%;
 }/*# sourceMappingURL=bwd_admin_update.css.map */

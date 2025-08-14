@@ -11,6 +11,7 @@
 
     include "../components/loadplugins.php";
     include "inc/berechnungen.php";
+    include "../components/config/timezone.php";
 
     $config = require __DIR__ . '/../components/config/timezone.php';
 

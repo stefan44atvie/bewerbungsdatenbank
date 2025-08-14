@@ -18,6 +18,10 @@
         <a class="disabled <?php echo ($current_page == 'erinnerungen.php') ? 'active' : ''; ?>" href="erinnerungen.php">Erinnerungen</a>
     </div>
     <div>
+        <a class="disabled <?php echo ($current_page == 'termine.php') ? 'active' : ''; ?>" href="termine.php">Termine</a>
+    </div>
+
+    <div>
         <a class="disabled <?php echo ($current_page == 'statistiken.php') ? 'active' : ''; ?>" href="statistiken.php">Statistiken</a>
     </div>
     <div>

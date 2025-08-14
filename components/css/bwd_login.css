@@ -1,0 +1,34 @@
+#login_area {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+#login_window {
+  width: 30%;
+  background-color: lightseagreen;
+  border: 1px solid black;
+  padding: 20px;
+  border-radius: 10px;
+  padding-bottom: 20px;
+}
+#login_window .loginbox_title {
+  width: 100%;
+  text-align: center;
+  margin-bottom: 20px;
+}
+#login_window #loginform_area {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 15px;
+  width: 100%;
+  height: 100%;
+}
+#login_window .loginwindow_email,
+#login_window .loginwindow_password,
+#login_window .loginwindow_button {
+  display: flex;
+  flex-direction: column;
+}/*# sourceMappingURL=bwd_login.css.map */

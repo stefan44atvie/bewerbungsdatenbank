@@ -1,5 +1,6 @@
 * { padding: 0; margin: 0; }
 
+$standardfont_title: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 
 /* ---- Standardfotns ---- */
 .standardtext{
@@ -8,6 +9,15 @@
     color:black;  
     font-weight: normal;
 }
+
+.pagetitel_text{
+    font-family: $standardfont_title;
+    font-size: xx-large;
+    color:black;
+    letter-spacing: 0.2em;
+    font-variant: small-caps;
+}
+
 .bold_text{
     font-weight: bold;
 }

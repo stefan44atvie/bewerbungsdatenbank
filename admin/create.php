@@ -15,6 +15,7 @@
 
     include "../components/loadplugins.php";
     include "inc/berechnungen.php";
+    include "../components/config/timezone.php";
 
     $current_page = getCurrentPage();
 

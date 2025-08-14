@@ -11,6 +11,14 @@
   font-weight: normal;
 }
 
+.pagetitel_text {
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  font-size: xx-large;
+  color: black;
+  letter-spacing: 0.2em;
+  font-variant: small-caps;
+}
+
 .bold_text {
   font-weight: bold;
 }

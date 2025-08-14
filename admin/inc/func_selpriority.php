@@ -17,8 +17,4 @@
         $selected = ($valPRIO === $currentpriority_value) ? 'selected' : '';
         $options_selPRIO .= "<option value=\"$valPRIO\" $selected>$valPRIO</option>";
     }
-
-
-
-
 ?>
