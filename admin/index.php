@@ -3,7 +3,9 @@
     ini_set('display_startup_errors', 1);
     error_reporting(E_ALL);
 
+    require_once ('../components/inc/check_remote_licence.php');
     require "../components/database/db_connect.php";
+    
     mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
     // require_once ('components/inc/check_remote_licence.php');
 
